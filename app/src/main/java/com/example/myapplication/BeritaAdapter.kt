@@ -8,6 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 
 class BeritaAdapter (val slideList: ArrayList<Berita>): RecyclerView.Adapter<BeritaAdapter.ViewHolder>()
 {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
+    {
+        val user: Berita = slideList[position]
+        holder.textViewJudul.text = user.judul
+        holder.textViewWaktu.text = user.waktu
+        holder.textViewPenulis.text = user.penulis
+        holder.textViewIsi.text = user.isi
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.list_berita, parent, false)
         return ViewHolder(v)
@@ -23,14 +32,4 @@ class BeritaAdapter (val slideList: ArrayList<Berita>): RecyclerView.Adapter<Ber
         val textViewPenulis = itemView.findViewById(R.id.penulis_berita) as TextView
         val textViewIsi = itemView.findViewById(R.id.isi_berita) as TextView
     }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int)
-    {
-        val user: Berita = slideList[position]
-        holder.textViewJudul.text = user.judul
-        holder.textViewWaktu.text = user.waktu
-        holder.textViewPenulis.text = user.penulis
-        holder.textViewIsi.text = user.isi
-    }
-
 }

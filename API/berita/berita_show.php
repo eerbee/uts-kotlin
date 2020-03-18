@@ -12,7 +12,7 @@ while($row = mysqli_fetch_array($query))
     	'judul_berita' = $row['judul_berita'],
     	'waktu_berita' = $row['waktu_berita'],
     	'penulis_berita' = $row['penulis_berita'],
-	    'isi_marquee' => $row['isi_marquee'],
+	    'isi_berita' => $row['isi_berita'],
 	));
 }
 echo json_encode(array("result" => $result));
